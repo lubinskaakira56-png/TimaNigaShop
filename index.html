@@ -13,10 +13,39 @@
         }
         
         body { 
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(
+                135deg, 
+                #ff00cc, #cc00ff, #9900ff, #6600ff, 
+                #3300ff, #0000ff, #0066ff, #00ccff,
+                #00ffff, #00ffcc, #00ff99, #00ff66,
+                #00ff33, #00ff00, #66ff00, #ccff00,
+                #ffff00, #ffcc00, #ff9900, #ff6600,
+                #ff3300, #ff0000, #ff0066, #ff00cc
+            );
+            background-size: 2000% 2000%;
+            animation: rainbow 15s ease infinite;
             padding: 20px;
             min-height: 100vh;
             color: #333;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(102, 126, 234, 0.3); /* Фиолетовый оттенок поверх радуги */
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         
         .container { 
@@ -170,7 +199,7 @@
         
         <!-- Категория 3 -->
         <div class="category">
-            <h2>🚬 HotSpot 400р 50мг 🚬</h2>
+            <h2> HotSpot 400р 50мг </h2>
             <div class="item">
                 <div class="item-name"> Ананас </div>
                 <div class="item-desc">50мг</div>
@@ -263,7 +292,7 @@
             </div>
             <div class="item">
                 <div class="item-name"> Пинаколада х2 вкус </div>
-                <div class="item-desc">60мг</div>
+                <div class="item-desc">60мg</div>
                 <div class="price">400 ₽</div>
             </div>
             <div class="item">
