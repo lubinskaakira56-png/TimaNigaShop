@@ -13,9 +13,16 @@
         }
         
         body {
-            background: linear-gradient(270deg, #ff00cc, #cc00ff, #9900ff, #6600ff, #3300ff, #0000ff, #0066ff);
-            background-size: 1400% 1400%;
-            animation: rainbow 1s linear infinite;
+            background: linear-gradient(270deg, 
+                #ff00cc, #f50cc7, #eb19c2, #e026bd, #d633b8, #cc40b3, #c24dae, #b85aa9, #ad67a4, #a3749f,
+                #8a3fc7, #8045c2, #764bbd, #6c51b8, #6257b3, #585dae, #4e63a9, #4469a4, #3a6f9f, #30759a,
+                #2600ff, #2a0cf5, #2e19eb, #3226e0, #3633d6, #3a40cc, #3e4dc2, #425ab8, #4667ad, #4a74a3,
+                #4e8199, #528e8f, #569b85, #5aa87b, #5eb571, #62c267, #66cf5d, #6adc53, #6ee949, #72f63f,
+                #76ff35, #7aff2b, #7eff21, #82ff17, #86ff0d, #8aff03, #8eff00, #92ff00, #96ff00, #9aff00,
+                #9eff00, #a2ff00, #a6ff00, #aaff00, #aeff00, #b2ff00, #b6ff00, #baff00, #beff00, #c2ff00
+            );
+            background-size: 3000% 3000%;
+            animation: rainbow 0.2s linear infinite;
             padding: 20px;
             min-height: 100vh;
             color: #333;
@@ -138,7 +145,7 @@
             position: absolute;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.2);
-            animation: float 1s infinite ease-in-out;
+            animation: float 15s infinite ease-in-out;
         }
         
         @keyframes float {
@@ -415,7 +422,7 @@
                 const size = Math.random() * 30 + 10;
                 const posX = Math.random() * 100;
                 const posY = Math.random() * 100;
-                const delay = Math.random() * 1;
+                const delay = Math.random() * 15;
                 const duration = Math.random() * 10 + 15;
                 
                 // Применение стилей
