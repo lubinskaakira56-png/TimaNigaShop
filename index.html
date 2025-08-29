@@ -63,6 +63,29 @@
             margin-bottom: 20px;
         }
         
+        .navigation {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .nav-button {
+            background: linear-gradient(145deg, #6f42c1, #5a32a3);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        
+        .nav-button:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(145deg, #5a32a3, #4a2985);
+        }
+        
         .category { 
             background: linear-gradient(145deg, #f8f9fa, #e9ecef);
             margin: 25px 0; 
@@ -107,6 +130,13 @@
             text-align: center;
             color: #6c757d;
             font-size: 0.9em;
+        }
+        
+        .item-stock {
+            flex: 1;
+            text-align: center;
+            color: #007bff;
+            font-weight: bold;
         }
         
         .price { 
@@ -215,7 +245,7 @@
                 text-align: center;
             }
             
-            .item-name, .item-desc, .price, .buy-button {
+            .item-name, .item-desc, .item-stock, .price, .buy-button {
                 margin: 5px 0;
             }
             
@@ -230,6 +260,11 @@
             .container {
                 padding: 15px;
             }
+            
+            .navigation {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -243,6 +278,11 @@
             <div class="subtitle">Магазин vapeur diabolique
                 для покупки нажмите купить или отпишите @VapeurDiaboliqueManager
             </div>
+            
+            <div class="navigation">
+                <a href="#испарители" class="nav-button">Испарители</a>
+                <!-- Можно добавить другие кнопки навигации при необходимости -->
+            </div>
         </header>
         
         <!-- Категория 1 -->
@@ -251,6 +291,7 @@
             <div class="item">
                 <div class="item-name"> Драгонфрукт </div>
                 <div class="item-desc">80мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -264,6 +305,7 @@
             <div class="item">
                 <div class="item-name"> Кисло сладкое яблоко </div>
                 <div class="item-desc">70мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -272,6 +314,7 @@
             <div class="item">
                 <div class="item-name"> Личи с белым персиком </div>
                 <div class="item-desc">70мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -280,6 +323,7 @@
             <div class="item">
                 <div class="item-name"> Лимонно лаймовая кола </div>
                 <div class="item-desc">70мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -293,6 +337,7 @@
             <div class="item">
                 <div class="item-name"> Ананас </div>
                 <div class="item-desc">50мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -306,6 +351,7 @@
             <div class="item">
                 <div class="item-name"> Кола со льдом </div>
                 <div class="item-desc">50мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -319,6 +365,7 @@
             <div class="item">
                 <div class="item-name"> Клубника Яблоко Дыня </div>
                 <div class="item-desc">50мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">200 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -332,6 +379,7 @@
             <div class="item">
                 <div class="item-name"> Яблоко груша </div>
                 <div class="item-desc">70мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -340,6 +388,7 @@
             <div class="item">
                 <div class="item-name"> Малина арбуз </div>
                 <div class="item-desc">70мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -348,6 +397,7 @@
             <div class="item">
                 <div class="item-name"> Кислый скитлс </div>
                 <div class="item-desc">70мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -361,6 +411,7 @@
             <div class="item">
                 <div class="item-name"> Морозное яблоко </div>
                 <div class="item-desc">20мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -369,6 +420,7 @@
             <div class="item">
                 <div class="item-name"> Ледяная малина </div>
                 <div class="item-desc">20мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -377,6 +429,7 @@
             <div class="item">
                 <div class="item-name"> Холодная смородина </div>
                 <div class="item-desc">20мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -385,6 +438,7 @@
             <div class="item">
                 <div class="item-name"> Морозная дыня </div>
                 <div class="item-desc">20мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -393,6 +447,7 @@
             <div class="item">
                 <div class="item-name"> Морозный арбуз </div>
                 <div class="item-desc">20мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -406,6 +461,7 @@
             <div class="item">
                 <div class="item-name"> Алоэ виноград х2 вкус </div>
                 <div class="item-desc">60мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -414,6 +470,7 @@
             <div class="item">
                 <div class="item-name"> Розовый лимонад x2 вкус </div>
                 <div class="item-desc">60мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -422,6 +479,7 @@
             <div class="item">
                 <div class="item-name"> Пинаколада х2 вкус </div>
                 <div class="item-desc">60мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -430,6 +488,7 @@
             <div class="item">
                 <div class="item-name"> Дыня персик х2 вкус </div>
                 <div class="item-desc">60мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -443,6 +502,7 @@
             <div class="item">
                 <div class="item-name"> Adrenaline Пепси </div>
                 <div class="item-desc">50мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -451,6 +511,7 @@
             <div class="item">
                 <div class="item-name"> Red Bull со вкусом апельсина </div>
                 <div class="item-desc">50мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -459,6 +520,7 @@
             <div class="item">
                 <div class="item-name"> Red Bull со вкусом персика </div>
                 <div class="item-desc">50мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -467,6 +529,7 @@
             <div class="item">
                 <div class="item-name"> Red Bull со вкусом абрикоса и клубники </div>
                 <div class="item-desc">50мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -480,6 +543,7 @@
             <div class="item">
                 <div class="item-name"> Жвачка виноград </div>
                 <div class="item-desc">50мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -488,6 +552,7 @@
             <div class="item">
                 <div class="item-name"> Ледяная груша яблоко </div>
                 <div class="item-desc">50мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -496,6 +561,7 @@
             <div class="item">
                 <div class="item-name"> Энергетик черника </div>
                 <div class="item-desc">50мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -504,6 +570,7 @@
             <div class="item">
                 <div class="item-name"> Малиновый лимонад </div>
                 <div class="item-desc">50мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -512,6 +579,7 @@
             <div class="item">
                 <div class="item-name"> Морозный мохито </div>
                 <div class="item-desc">50мг</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">400 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -520,11 +588,12 @@
         </div>
         
         <!-- Категория 11 -->
-        <div class="category">
+        <div class="category" id="испарители">
             <h2> Испарики 300р </h2>
             <div class="item">
                 <div class="item-name"> Испаритель Aegis P 0.2 Coil (буст про) </div>
                 <div class="item-desc">испаритель</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">300 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -533,6 +602,7 @@
             <div class="item">
                 <div class="item-name"> Испарители SMOANT K-1 0.3 Ом (пасито,кнайт) </div>
                 <div class="item-desc">испаритель</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">300 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
@@ -541,6 +611,7 @@
             <div class="item">
                 <div class="item-name"> Испаритель Aegis B 0.2 Coil (хиро, бусты) </div>
                 <div class="item-desc">испаритель</div>
+                <div class="item-stock">7 шт</div>
                 <div class="price">300 ₽</div>
                 <div class="buy-button">
                     <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
