@@ -4,181 +4,217 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>💨 Прайс-лист 💨 | Магазин vapeur diabolique</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { 
             margin: 0; 
             padding: 0; 
             box-sizing: border-box; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
         }
         
         body {
-            background: linear-gradient(270deg, 
-                #000000, #0a0014, #140028, #1e003c, #280050, 
-                #320064, #3c0078, #46008c, #5000a0, #5a00b4
-            );
-            background-size: 1000% 1000%;
-            animation: gradientShift 15s ease infinite;
+            background-color: #0a0e17;
+            color: #e0e0e0;
             padding: 20px;
             min-height: 100vh;
-            color: #333;
             position: relative;
             overflow-x: hidden;
         }
         
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
         .container { 
-            max-width: 1000px; 
+            max-width: 1200px; 
             margin: 0 auto; 
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(18, 25, 40, 0.85);
+            backdrop-filter: blur(10px);
             padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             position: relative;
             z-index: 1;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         header {
             text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #eee;
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         h1 { 
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 2.8em;
+            text-shadow: 0 0 15px rgba(103, 178, 249, 0.6);
+            letter-spacing: 1px;
         }
         
         .subtitle {
-            color: #6c757d;
+            color: #8a9bb8;
             font-size: 1.2em;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .contact-info {
+            background: rgba(30, 136, 229, 0.15);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: inline-block;
         }
         
         .navigation {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 15px;
+            margin-bottom: 30px;
         }
         
         .nav-button {
-            background: linear-gradient(145deg, #6f42c1, #5a32a3);
+            background: linear-gradient(145deg, #1e88e5, #1565c0);
             color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
+            padding: 12px 20px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            transition: transform 0.2s;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 8px rgba(21, 101, 192, 0.3);
         }
         
         .nav-button:hover {
-            transform: translateY(-2px);
-            background: linear-gradient(145deg, #5a32a3, #4a2985);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(21, 101, 192, 0.4);
+            background: linear-gradient(145deg, #2196f3, #1976d2);
         }
         
         .category { 
-            background: linear-gradient(145deg, #f8f9fa, #e9ecef);
-            margin: 25px 0; 
+            background: linear-gradient(145deg, rgba(26, 35, 51, 0.7), rgba(20, 28, 41, 0.7));
+            margin: 30px 0; 
             padding: 25px; 
-            border-radius: 12px;
-            border-left: 5px solid #6f42c1;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            border-left: 4px solid #1e88e5;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        .category:hover {
+            transform: translateY(-5px);
         }
         
         .category h2 { 
-            color: #495057; 
-            margin-bottom: 20px;
-            font-size: 1.4em;
+            color: #bbdefb; 
+            margin-bottom: 25px;
+            font-size: 1.5em;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
         }
         
         .item { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center;
-            padding: 15px;
-            margin: 10px 0;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
+            background: rgba(30, 40, 60, 0.8);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
         
         .item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            background: rgba(35, 45, 65, 0.9);
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
         }
         
         .item-name { 
+            font-weight: bold;
+            color: #fff;
+            font-size: 1.1em;
             flex: 2;
-            font-weight: bold;
-            color: #333;
-        }
-        
-        .item-desc { 
-            flex: 1;
-            text-align: center;
-            color: #6c757d;
-            font-size: 0.9em;
-        }
-        
-        .item-stock {
-            flex: 1;
-            text-align: center;
-            color: #007bff;
-            font-weight: bold;
         }
         
         .price { 
-            flex: 1;
-            text-align: right; 
             font-weight: bold; 
-            color: #28a745;
-            font-size: 1.1em;
+            color: #4caf50;
+            font-size: 1.3em;
+            text-align: right;
+            flex: 1;
+        }
+        
+        .item-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+        
+        .item-desc, .item-stock {
+            color: #8a9bb8;
+            font-size: 0.95em;
         }
         
         .buy-button {
-            flex: 1;
-            text-align: center;
-            margin-left: 15px;
+            margin-top: auto;
         }
         
         .buy-button a {
-            display: inline-block;
-            background-color: #000;
+            display: block;
+            background: linear-gradient(145deg, #1e88e5, #1565c0);
             color: white;
             font-weight: bold;
-            padding: 8px 15px;
-            border-radius: 5px;
+            padding: 12px;
+            border-radius: 8px;
             text-decoration: none;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(21, 101, 192, 0.3);
         }
         
         .buy-button a:hover {
-            background-color: #333;
+            background: linear-gradient(145deg, #2196f3, #1976d2);
+            box-shadow: 0 6px 12px rgba(21, 101, 192, 0.4);
+            transform: translateY(-2px);
         }
         
         footer {
             text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 2px solid #eee;
-            color: #6c757d;
-            font-size: 0.9em;
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #8a9bb8;
+            font-size: 0.95em;
         }
         
-        /* Анимированные частицы для фона */
-        .particles {
+        /* Анимированные элементы фона */
+        .background-elements {
             position: fixed;
             top: 0;
             left: 0;
@@ -189,467 +225,638 @@
             pointer-events: none;
         }
         
-        .particle {
+        .bg-element {
             position: absolute;
             border-radius: 50%;
-            background: rgba(0, 0, 0, 0.8);
-            animation: float 20s infinite ease-in-out;
-            opacity: 0;
+            opacity: 0.1;
+            animation: float 25s infinite ease-in-out;
         }
         
         @keyframes float {
             0% {
-                transform: translateY(0) translateX(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.8;
-            }
-            25% {
-                transform: translateY(-40px) translateX(30px);
-                opacity: 0.9;
+                transform: translateY(0) translateX(0) rotate(0deg);
             }
             50% {
-                transform: translateY(-80px) translateX(-50px);
-                opacity: 0.7;
-            }
-            75% {
-                transform: translateY(-40px) translateX(60px);
-                opacity: 0.9;
-            }
-            90% {
-                opacity: 0.8;
+                transform: translateY(-40px) translateX(40px) rotate(180deg);
             }
             100% {
-                transform: translateY(0) translateX(0);
-                opacity: 0;
+                transform: translateY(0) translateX(0) rotate(360deg);
             }
         }
         
-        /* Синхронизация с градиентом */
-        @keyframes particleOpacity {
-            0%, 100% {
-                opacity: 0;
-            }
-            20%, 80% {
-                opacity: 0.9;
-            }
-            40%, 60% {
-                opacity: 0.7;
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            .items-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
         }
         
         @media (max-width: 768px) {
-            .item {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .item-name, .item-desc, .item-stock, .price, .buy-button {
-                margin: 5px 0;
-            }
-            
-            .buy-button {
-                margin-left: 0;
+            .container {
+                padding: 20px;
             }
             
             h1 {
-                font-size: 2em;
+                font-size: 2.2em;
             }
             
-            .container {
-                padding: 15px;
+            .items-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .category {
+                padding: 20px;
             }
             
             .navigation {
                 flex-direction: column;
                 align-items: center;
             }
+            
+            .nav-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .subtitle {
+                font-size: 1em;
+            }
+            
+            .category h2 {
+                font-size: 1.3em;
+            }
+            
+            .item-header {
+                flex-direction: column;
+            }
+            
+            .price {
+                text-align: left;
+                margin-top: 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Анимированные частицы фона -->
-    <div class="particles" id="particles"></div>
+    <!-- Анимированные элементы фона -->
+    <div class="background-elements" id="bg-elements"></div>
     
     <div class="container">
         <header>
-            <h1>💨 Прайс-лист 💨</h1>
-            <div class="subtitle">Магазин vapeur diabolique
-                для покупки нажмите купить или отпишите @VapeurDiaboliqueManager
+            <h1><i class="fas fa-smog"></i> Прайс-лист <i class="fas fa-smog"></i></h1>
+            <div class="subtitle">Магазин vapeur diabolique - качественные товары по доступным ценам</div>
+            
+            <div class="contact-info">
+                <p><i class="fas fa-info-circle"></i> Для покупки нажмите "Купить" или напишите @VapeurDiaboliqueManager</p>
             </div>
             
             <div class="navigation">
-                <a href="#испарители" class="nav-button">Испарители</a>
-                <!-- Можно добавить другие кнопки навигации при необходимости -->
+                <a href="#испарители" class="nav-button"><i class="fas fa-fire"></i> Испарители</a>
+                <a href="#" class="nav-button"><i class="fas fa-list"></i> Все категории</a>
+                <a href="https://t.me/VapeurDiaboliqueManager" class="nav-button" target="_blank"><i class="fab fa-telegram"></i> Написать в Telegram</a>
             </div>
         </header>
         
         <!-- Категория 1 -->
         <div class="category">
-            <h2> Самоубийца 400р 80мг </h2>
-            <div class="item">
-                <div class="item-name"> Драгонфрукт </div>
-                <div class="item-desc">80мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+            <h2><i class="fas fa-skull"></i> Самоубийца 400р 80мг</h2>
+            <div class="items-grid">
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Драгонфрукт</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">80мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
             </div>
         </div>
         
         <!-- Категория 2 -->
         <div class="category">
-            <h2> Анархия 400р 70мг </h2>
-            <div class="item">
-                <div class="item-name"> Кисло сладкое яблоко </div>
-                <div class="item-desc">70мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+            <h2><i class="fas fa-radiation"></i> Анархия 400р 70мг</h2>
+            <div class="items-grid">
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Кисло-сладкое яблоко</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">70мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="item-name"> Личи с белым персиком </div>
-                <div class="item-desc">70мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Личи с белым персиком</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">70мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="item-name"> Лимонно лаймовая кола </div>
-                <div class="item-desc">70мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Лимонно-лаймовая кола</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">70мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
             </div>
         </div>
         
         <!-- Категория 3 -->
         <div class="category">
-            <h2>🚬 HotSpot 400р 50мг 🚬</h2>
-            <div class="item">
-                <div class="item-name"> Ананас </div>
-                <div class="item-desc">50мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+            <h2><i class="fas fa-smoking"></i> HotSpot 400р 50мг <i class="fas fa-smoking"></i></h2>
+            <div class="items-grid">
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Ананас</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">50мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
             </div>
         </div>
         
         <!-- Категория 4 -->
         <div class="category">
-            <h2> Podonki v1 400р 50мг </h2>
-            <div class="item">
-                <div class="item-name"> Кола со льдом </div>
-                <div class="item-desc">50мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+            <h2><i class="fas fa-cannabis"></i> Podonki v1 400р 50мг</h2>
+            <div class="items-grid">
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Кола со льдом</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">50мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
             </div>
         </div>
         
         <!-- Категория 5 -->
         <div class="category">
-            <h2>🇷🇺 IZI 200р 50мг 🇷🇺</h2>
-            <div class="item">
-                <div class="item-name"> Клубника Яблоко Дыня </div>
-                <div class="item-desc">50мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">200 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+            <h2><i class="fas fa-flag"></i> IZI 200р 50мг <i class="fas fa-flag"></i></h2>
+            <div class="items-grid">
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Клубника Яблоко Дыня</div>
+                        <div class="price">200 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">50мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
             </div>
         </div>
         
         <!-- Категория 6 -->
         <div class="category">
-            <h2> XYLINET? RAZ'EB 400р 70мг </h2>
-            <div class="item">
-                <div class="item-name"> Яблоко груша </div>
-                <div class="item-desc">70мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+            <h2><i class="fas fa-question"></i> XYLINET? RAZ'EB 400р 70мг</h2>
+            <div class="items-grid">
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Яблоко груша</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">70мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="item-name"> Малина арбуз </div>
-                <div class="item-desc">70мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Малина арбуз</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">70мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="item-name"> Кислый скитлс </div>
-                <div class="item-desc">70мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Кислый скитлс</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">70мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
             </div>
         </div>
         
         <!-- Категория 7 -->
         <div class="category">
-            <h2> DUALL EXTRA 400р 20мг </h2>
-            <div class="item">
-                <div class="item-name"> Морозное яблоко </div>
-                <div class="item-desc">20мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+            <h2><i class="fas fa-snowflake"></i> DUALL EXTRA 400р 20мг</h2>
+            <div class="items-grid">
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Морозное яблоко</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">20мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="item-name"> Ледяная малина </div>
-                <div class="item-desc">20мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Ледяная малина</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">20мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="item-name"> Холодная смородина </div>
-                <div class="item-desc">20мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Холодная смородина</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">20мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="item-name"> Морозная дыня </div>
-                <div class="item-desc">20мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Морозная дыня</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">20мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="item-name"> Морозный арбуз </div>
-                <div class="item-desc">20мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Морозный арбуз</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">20мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
             </div>
         </div>
         
         <!-- Категория 8 -->
         <div class="category">
-            <h2> Rick And Morty На Замерзоне 400р 60мг </h2>
-            <div class="item">
-                <div class="item-name"> Алоэ виноград х2 вкус </div>
-                <div class="item-desc">60мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+            <h2><i class="fas fa-globe-americas"></i> Rick And Morty На Замерзоне 400р 60мг</h2>
+            <div class="items-grid">
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Алоэ виноград х2 вкус</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">60мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="item-name"> Розовый лимонад x2 вкус </div>
-                <div class="item-desc">60мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Розовый лимонад x2 вкус</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">60мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="item-name"> Пинаколада х2 вкус </div>
-                <div class="item-desc">60мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Пинаколада х2 вкус</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">60мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="item-name"> Дыня персик х2 вкус </div>
-                <div class="item-desc">60мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Дыня персик х2 вкус</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">60мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
             </div>
         </div>
         
         <!-- Категория 9 -->
         <div class="category">
-            <h2> D.L.T.A 400р 50мг </h2>
-            <div class="item">
-                <div class="item-name"> Adrenaline Пепси </div>
-                <div class="item-desc">50мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+            <h2><i class="fas fa-bolt"></i> D.L.T.A 400р 50мг</h2>
+            <div class="items-grid">
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Adrenaline Пепси</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">50мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="item-name"> Red Bull со вкусом апельсина </div>
-                <div class="item-desc">50мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Red Bull со вкусом апельсина</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">50мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="item-name"> Red Bull со вкусом персика </div>
-                <div class="item-desc">50мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Red Bull со вкусом персика</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">50мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="item-name"> Red Bull со вкусом абрикоса и клубники </div>
-                <div class="item-desc">50мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Red Bull со вкусом абрикоса и клубники</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">50мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
             </div>
         </div>
         
         <!-- Категория 10 -->
         <div class="category">
-            <h2> ИндивиDUALL 400р 50мг </h2>
-            <div class="item">
-                <div class="item-name"> Жвачка виноград </div>
-                <div class="item-desc">50мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+            <h2><i class="fas fa-user"></i> ИндивиDUALL 400р 50мг</h2>
+            <div class="items-grid">
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Жвачка виноград</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">50мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="item-name"> Ледяная груша яблоко </div>
-                <div class="item-desc">50мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Ледяная груша яблоко</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">50мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="item-name"> Энергетик черника </div>
-                <div class="item-desc">50мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Энергетик черника</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">50мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="item-name"> Малиновый лимонад </div>
-                <div class="item-desc">50мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Малиновый лимонад</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">50мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="item-name"> Морозный мохито </div>
-                <div class="item-desc">50мг</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">400 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Морозный мохито</div>
+                        <div class="price">400 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">50мг</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
             </div>
         </div>
         
         <!-- Категория 11 -->
         <div class="category" id="испарители">
-            <h2> Испарики 300р </h2>
-            <div class="item">
-                <div class="item-name"> Испаритель Aegis P 0.2 Coil (буст про) </div>
-                <div class="item-desc">испаритель</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">300 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+            <h2><i class="fas fa-fire"></i> Испарики 300р</h2>
+            <div class="items-grid">
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Испаритель Aegis P 0.2 Coil (буст про)</div>
+                        <div class="price">300 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">испаритель</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="item-name"> Испарители SMOANT K-1 0.3 Ом (пасито,кнайт) </div>
-                <div class="item-desc">испаритель</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">300 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Испарители SMOANT K-1 0.3 Ом (пасито,кнайт)</div>
+                        <div class="price">300 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">испаритель</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="item-name"> Испаритель Aegis B 0.2 Coil (хиро, бусты) </div>
-                <div class="item-desc">испаритель</div>
-                <div class="item-stock">7 шт</div>
-                <div class="price">300 ₽</div>
-                <div class="buy-button">
-                    <a href="https://t.me/VapeurDiaboliqueManager" target="_blank">Купить</a>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-name">Испаритель Aegis B 0.2 Coil (хиро, бусты)</div>
+                        <div class="price">300 ₽</div>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-desc">испаритель</div>
+                        <div class="item-stock">7 шт</div>
+                    </div>
+                    <div class="buy-button">
+                        <a href="https://t.me/VapeurDiaboliqueManager" target="_blank"><i class="fas fa-shopping-cart"></i> Купить</a>
+                    </div>
                 </div>
             </div>
         </div>
         
         <footer>
-            <p>Мой первый проект на GitHub</p>
+            <p>© 2023 Vapeur Diabolique | Мой первый проект на GitHub</p>
         </footer>
     </div>
 
     <script>
-        // Создание анимированных частиц для фона
+        // Создание анимированных элементов фона
         document.addEventListener('DOMContentLoaded', function() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 666;
+            const bgContainer = document.getElementById('bg-elements');
+            const elementCount = 20;
             
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
+            for (let i = 0; i < elementCount; i++) {
+                const element = document.createElement('div');
+                element.classList.add('bg-element');
                 
-                // Случайные параметры для частиц
-                const size = Math.random() * 20 + 5;
+                // Случайные параметры для элементов
+                const size = Math.random() * 150 + 50;
                 const posX = Math.random() * 100;
                 const posY = Math.random() * 100;
-                const delay = Math.random() * 20;
-                const duration = Math.random() * 10 + 20;
+                const delay = Math.random() * 10;
+                const duration = Math.random() * 20 + 20;
+                const hue = Math.random() * 360;
                 
                 // Применение стилей
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.left = `${posX}%`;
-                particle.style.top = `${posY}%`;
-                particle.style.animationDelay = `${delay}s`;
-                particle.style.animationDuration = `${duration}s`;
+                element.style.width = `${size}px`;
+                element.style.height = `${size}px`;
+                element.style.left = `${posX}%`;
+                element.style.top = `${posY}%`;
+                element.style.animationDelay = `${delay}s`;
+                element.style.animationDuration = `${duration}s`;
+                element.style.background = `radial-gradient(circle, hsl(${hue}, 70%, 60%), transparent)`;
+                element.style.opacity = '0.05';
                 
-                particlesContainer.appendChild(particle);
+                bgContainer.appendChild(element);
             }
         });
     </script>
